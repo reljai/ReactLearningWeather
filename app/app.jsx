@@ -6,17 +6,9 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
-var objOne = {
-    author: 'Relja',
-    location: 'Seattle'
-};
-
-var objTwo = {
-    age: 42,
-    ...objOne
-};
-
-console.log(objTwo);
+// load Foundation
+require('style!css!foundation-sites/dist/foundation.min.css');
+$(document).foundation();
 
 ReactDOM.render(
     <Router history={hashHistory}>

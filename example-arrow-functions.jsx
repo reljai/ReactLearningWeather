@@ -24,6 +24,18 @@ var person = {
 };
 
 person.greet();
+
+var objOne = {
+    author: 'Relja',
+    location: 'Seattle'
+};
+
+var objTwo = {
+    age: 42,
+    ...objOne
+};
+
+console.log(objTwo);
 */
 function add(a, b) {
     return a + b;
