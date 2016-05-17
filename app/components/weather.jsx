@@ -50,7 +50,7 @@ var Weather = React.createClass({
         var showError = typeof errorMessage === 'string';
         return (
             <div>
-                <h3 className="text-center">Get Weather</h3>
+                <h3 className="text-center page-title">Get Weather</h3>
                 <WeatherForm onNewCity={this.handleNewCity}/>
                 {renderMessage()}
                 <ErrorModal shouldShow={showError} message={errorMessage || ''}/>
