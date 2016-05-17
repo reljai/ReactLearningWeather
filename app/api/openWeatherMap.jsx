@@ -11,7 +11,7 @@ module.exports = {
             if (response.data.cod && response.data.message) {
                 throw new Error(response.data.message);
             } else {
-                return response.data.main.temp;
+                return response.data;
             }
         }, function(response) {
             throw new Error(response.data.message);
