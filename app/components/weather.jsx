@@ -35,6 +35,24 @@ var Weather = React.createClass({
         });
     },
     
+    componentDidMount: function() {
+        var location = this.props.location.query.location;
+        
+        if (location && location.length > 0) {
+            this.handleNewCity(location);
+            window.location.hash = '#/';
+        }
+    },
+    
+    componentWillReceiveProps: function(newProps) {
+        var location = newProps.location.query.location;
+        
+        if (location && location.length > 0) {
+            this.handleNewCity(location);
+            window.location.hash = '#/';
+        }
+    },
+    
     render: function() {
         var {errorMessage, isLoading, temp, city} = this.state;
         var that = this;
@@ -50,7 +68,7 @@ var Weather = React.createClass({
         var showError = typeof errorMessage === 'string';
         return (
             <div>
-                <h3 className="text-center page-title">Get Weather</h3>
+                <h1 className="text-center page-title">Get Weather</h1>
                 <WeatherForm onNewCity={this.handleNewCity}/>
                 {renderMessage()}
                 <ErrorModal shouldShow={showError} message={errorMessage || ''}/>
